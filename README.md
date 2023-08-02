@@ -1,6 +1,7 @@
 # LcwUsecase
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
+Couln't run npm install due to a version incompatibility on your local machine, you can try npm install --force.
 
 ## Development server
 
