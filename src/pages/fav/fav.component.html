@@ -1,0 +1,26 @@
+
+<div class="fav-container">
+    <div class="fav-items">
+      <span class="fav-title">Favorilerim</span>
+      <br>
+      <div *ngFor="let product of favoriteProducts"  class="fav-item">
+        <img [src]="product.imageUrl" alt="Ürün Fotoğrafı" class="product-image">
+        <div class="product-details">
+          <h2 class="product-name">{{ product.name }}</h2>
+          <p class="product-code">W1CE95Z8 - 998</p>
+          <br>
+          <p class="product-size">Beden: M</p>
+          <p class="product-color">Renk: Gri Melanj Baskı</p>
+        </div>
+        <div class="product-price-controls">
+          <p class="product-price">{{ product.price }}</p>
+          <br>
+          <div (click)="toggleFavorite(product)">
+            <img [src]="product.isFavorite ? './assets/product-fav.svg' : './assets/fav.svg'" alt="Favori" class="favorite-icon">
+       
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>

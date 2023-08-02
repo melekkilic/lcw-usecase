@@ -1,0 +1,39 @@
+<div class="cart-container">
+  <div class="cart-items">
+    <span class="cart-title">Sepetim</span>
+    <br>
+    <div *ngFor="let product of cartItems" class="cart-item">
+      <img [src]="product.imageUrl" alt="Ürün Fotoğrafı" class="product-image">
+      <div class="product-details">
+        <h2 class="product-name">{{ product.name }}</h2>
+        <p class="product-code">W1CE95Z8 - 998</p>
+        <br>
+        <p class="product-size">Beden: M</p>
+        <p class="product-color">Renk: Gri Melanj Baskı</p>
+      </div>
+      <div class="product-price-controls">
+        <p class="product-price">{{ product.price }}</p>
+        <br>
+        <div>
+          <img src="./assets/delete.svg" (click)="removeFromCart(product)" style="margin-right:10px" alt="Image 1">
+          <img src="./assets/fav.svg" alt="Image 1">
+    
+        </div>
+        <div class="quantity-controls">
+          <div class="actions-row">
+            <button class="btn-decrease" (click)="decreaseQuantity(product)">-</button>
+            <p class="product-number">{{ product.quantity }}</p>
+            <button class="btn-increase" (click)="increaseQuantity(product)">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cart-summary">
+    <h3 class="summary-title">Sipariş Özeti</h3>
+    <p class="summary-item">Ürün Toplam: {{ getTotalPrice() }} TL</p>
+    <p class="summary-item">Kargo Ücreti: Bedava</p>
+    <p class="summary-item-total">Genel Toplam: {{ getTotalPrice() }} TL</p>
+
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<mat-card>
+    <mat-card-content>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb-list">
+              <li class="breadcrumb-item">
+                <a routerLink="/">Ana Sayfa</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a routerLink="/products">Erkek</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                SweatShirt
+              </li>
+            </ol>
+        </nav>
+        <br>
+<div>
+    <mat-form-field appearance="outline" class="sort-dropdown">
+        <mat-label>Sırala</mat-label>
+        <mat-select [(value)]="selectedSortOption" (valueChange)="sortProducts()" >
+          <mat-option class="option-text" value="ucuzdan-pahaliya">Ucuzdan Pahaliya</mat-option>
+          <mat-option class="option-text" value="pahalidan-ucuza">Pahalidan Ucuza</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <span class="content-title">Erkek Sweatshirt Modelleri</span>
+</div>
+
+<br>
+<div>
+    <span *ngIf="this.productListLength==0"  class="content-title-bold">12 Ürün</span>
+    <span *ngIf="this.productListLength>0"  class="content-title-bold">"{{searchKeyword}}" ile ilgili {{ productListLength }} ürün bulduk</span>
+
+</div>
+<br>
+<div class="product-list">
+    <div class="product-card" *ngFor="let product of products">
+      <img [src]="product.imageUrl" alt="Ürün Fotoğrafı" class="product-image">
+      <div class="favorite-icon-container" (click)="toggleFavorite(product)">
+        <img [src]="product.isFavorite ? './assets/product-fav.svg' : './assets/fav.svg'" alt="Favori" class="favorite-icon">
+      </div>
+     
+      <mat-card-content>
+        <h2 class="product-name">{{ product.name }}</h2>
+        <p class="product-price">{{ product.price }}</p>
+        <div class="color-icons">
+            <i class="fas fa-circle red-icon"></i>
+            <i class="fas fa-circle blue-icon"></i>
+            <p class="product-color" >{{ product.color }}</p>
+          </div>
+        <button mat-raised-button class="btn-add" (click)=addToCart(product) color="primary">Sepete Ekle</button>
+    </mat-card-content>
+    </div>
+  </div>
+    </mat-card-content>
+   
+</mat-card>
+<app-footer></app-footer>

@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: #f7f7f7;
+}
+
+/* Sepet Stilleri */
+.cart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cart-items {
+  flex: 1;
+}
+
+.cart-title {
+  color: #61666A;
+  font: normal bold 24px "Rubik", sans-serif;
+  margin-bottom: 10px;
+}
+
+
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.product-image {
+  width: 180px;
+  height: 240px;
+  margin-right: 20px;
+}
+
+.product-details {
+  flex: 1;
+}
+
+.product-name {
+  font: normal normal 24px "Rubik", sans-serif;
+  color: #61666A;
+}
+
+.product-size {
+  font: normal normal 22px "Rubik", sans-serif;
+  color: #61666A;
+  margin-top: 10px; /* Önceki değer 100px olarak verilmişti, bu nedenle düşürdüm */
+}
+
+.product-price-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.product-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: right;
+  letter-spacing: 0px;
+  color: #0047BA;
+  opacity: 1;
+}
+
+.product-color {
+  font: normal normal 22px "Rubik", sans-serif;
+  color: #61666A;
+}
+
+.product-code {
+  text-align: left;
+  font: normal normal 20px "Rubik", sans-serif;
+  letter-spacing: 0px;
+  color: #ADB5BD;
+  opacity: 1;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.actions-row {
+  display: flex;
+  align-items: center;
+}
+
+.btn-remove,
+.btn-fav {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.btn-fav {
+  margin-left: 5px;
+}
+
+.btn-increase,
+.btn-decrease,
+.product-number {
+  cursor: pointer;
+  background-color: #f7f7f7;
+  color: #61666A;
+  border: none;
+  padding: 5px 10px;
+  font-size: 24px;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+.cart-summary {
+  flex-basis: 30%;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  margin-top: 30px;
+}
+
+.total-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.btn-checkout {
+  background-color: #28a745;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.total-price {
+  color: #61666A;
+  font: normal bold 24px "Rubik", sans-serif;
+}
+
+.summary-title{
+  color: #61666A;
+  font: normal bold 24px "Rubik", sans-serif;
+}
+
+.summary-item{
+  color: #61666A;
+  font: normal normal normal 18px "Rubik", sans-serif;
+  margin-top:20px;
+}
+
+.summary-item-total{
+  color: #0047BA;
+  font: normal normal bold 24px "Rubik", sans-serif;
+  margin-top:20px;
+  
+}
