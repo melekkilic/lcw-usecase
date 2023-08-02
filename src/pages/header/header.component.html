@@ -1,29 +1,28 @@
 <header class="header">
-    <div class="header-top">
-      <div class="header-logo">
-        <img src="./assets/Layer2.svg" alt="Logo">
+  <div class="header-top">
+    <div class="header-logo">
+      <img src="./assets/Layer2.svg" alt="Logo">
+    </div>
+    <div class="header-search">
+      <input [(ngModel)]="searchValue" type="text" placeholder="Tüm ürünlerde ara">
+      <button (click)="search()">Ara</button>
+    </div>
+    <div class="header-images">
+      <div class="header-image">
+        <img src="./assets/Icon-Favorite.svg" (click)="getFavorite()" alt="Image 1">
+        <span class="image-span">Favorilerim</span>
       </div>
-      <div class="header-search">
-        <input [(ngModel)]="searchValue" type="text" placeholder="Tüm ürünlerde ara">
-        <button (click)="search()">Ara</button>
-      </div>
-      <div class="header-images">
-        <div class="header-image">
-          <img src="./assets/Icon-Favorite.svg" (click)="getFavorite()" alt="Image 1">
-          <span class="image-span">Favorilerim</span>
-        </div>
-        <div class="header-image">
-          <img src="./assets/shopping_bag_black_24dp.svg" (click)="getCard()"   alt="Image 2">
-          <span class="image-span">Sepetim</span>
-        </div>
+      <div class="header-image">
+        <img src="./assets/shopping_bag_black_24dp.svg" (click)="getCard()" alt="Image 2">
+        <span class="image-span">Sepetim</span>
       </div>
     </div>
-    <div class="header-categories">
-      <span class="header-category">KADIN</span>
-      <span class="header-category">ERKEK</span>
-      <span class="header-category">ÇOCUK</span>
-      <span class="header-category">BEBEK</span>
-      <span class="header-category">LCW HOME</span>
-    </div>
-  </header>
-  
+  </div>
+  <div class="header-categories">
+    <span class="header-category">KADIN</span>
+    <span class="header-category">ERKEK</span>
+    <span class="header-category">ÇOCUK</span>
+    <span class="header-category">BEBEK</span>
+    <span class="header-category">LCW HOME</span>
+  </div>
+</header>

@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
-import { SearchService } from 'src/services/search.service';
+import { ProductService } from 'src/services/product.service';
 import { Product, products } from '../content/product.model';
 
 @Component({
@@ -16,9 +16,9 @@ export class FavComponent implements OnDestroy {
 
 
 
-  constructor(private searchService: SearchService,
+  constructor(private productService: ProductService,
     private dialog: MatDialog) {
-      this.favoriteProductsSubscription = this.searchService.favoriteProducts$.subscribe((favorites) => {
+      this.favoriteProductsSubscription = this.productService.favoriteProducts$.subscribe((favorites) => {
         this.favoriteProducts = favorites;
       });
 
@@ -33,10 +33,10 @@ export class FavComponent implements OnDestroy {
     }
     toggleFavorite(product: Product) {
       if (product.isFavorite) {
-        this.searchService.removeFromFav(product.id);
+        this.productService.removeFromFav(product.id);
       }
       else{
-        this.searchService.addToFav(product);
+        this.productService.addToFav(product);
       }
       product.isFavorite = !product.isFavorite;
     }

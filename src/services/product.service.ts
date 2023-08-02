@@ -6,7 +6,7 @@ import { Product,products } from 'src/pages/content/product.model';
 @Injectable({
   providedIn: 'root'
 })
-export class SearchService {
+export class ProductService {
 
     private searchKeywordSubject: Subject<string> = new Subject<string>();
     public searchKeyword$ = this.searchKeywordSubject.asObservable();
@@ -14,10 +14,6 @@ export class SearchService {
     private favoriteProducts: Product[] = [];
     private favoriteProductsSubject = new BehaviorSubject<Product[]>([]);
     favoriteProducts$ = this.favoriteProductsSubject.asObservable();
-
-
-
-
     private cartItemsSubject = new BehaviorSubject<any[]>([]);
     public cartItems$ = this.cartItemsSubject.asObservable();
     public cartItemsList :Product[]=products;
@@ -29,9 +25,11 @@ export class SearchService {
     }
 
 
-  getProductList(): Product[] {
-    
-    return this.productList;
+  getProductList(name?:string): Product[] {
+      if(name){
+        return this.productList.filter((product)=>product.name.toLowerCase().includes(name.toLowerCase()));
+      }
+      return this.productList;
   }
 
 

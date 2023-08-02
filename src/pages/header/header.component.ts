@@ -1,6 +1,6 @@
-import { Component ,Output,EventEmitter} from '@angular/core';
-import { Router } from '@angular/router';
-import { SearchService } from 'src/services/search.service';
+import {Component, Output, EventEmitter} from '@angular/core';
+import {Router} from '@angular/router';
+import {ProductService} from 'src/services/product.service';
 
 @Component({
   selector: 'app-header',
@@ -8,30 +8,26 @@ import { SearchService } from 'src/services/search.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  constructor(private searchService: SearchService,
-    public router: Router
-    ){}
-
-
-  searchValue:any;
-  filterProducts(searchTerm: string) {
-
-  
+  constructor(private productService: ProductService,
+              public router: Router
+  ) {
   }
 
-  search(){
+  searchValue: any;
+
+  search() {
     this.searchValue = this.searchValue.toLowerCase().trim();
 
-    if(this.searchValue.length>=3){
-      this.searchService.search(this.searchValue);
+    if (this.searchValue.length >= 3) {
+      this.productService.search(this.searchValue);
     }
   }
 
-  getCard(){
+  getCard() {
     this.router.navigate(['/sepet']);
-
   }
-  getFavorite(){
+
+  getFavorite() {
     this.router.navigate(['/fav'])
   }
 }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HeaderComponent } from 'src/pages/header/header.component';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MatIconModule} from '@angular/material/icon';
@@ -11,12 +10,13 @@ import {MatCardModule} from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { SearchService } from 'src/services/search.service';
+import { ProductService } from 'src/services/product.service';
 import { CartComponent } from 'src/pages/cart/cart.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { FavComponent } from 'src/pages/fav/fav.component';
 import { FooterComponent } from 'src/pages/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {DeleteConfirmComponent} from "../pages/delete-confirm/delete-confirm.component";
 
 
 
@@ -29,12 +29,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     ContentComponent,
     CartComponent,
     FavComponent,
-    FooterComponent
+    FooterComponent,
+    DeleteConfirmComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatIconModule,
     MatCardModule,
     MatSelectModule,
@@ -43,9 +44,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatDialogModule,
     MatToolbarModule,
 
-    
+
   ],
-  providers: [SearchService],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
